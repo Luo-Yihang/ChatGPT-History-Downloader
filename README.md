@@ -24,6 +24,26 @@
 3. Enable Developer Mode.
 4. Drag this repo folder anywhere on the page to import it (do not delete the folder afterwards).
 
+## Usage
+
+1. Switch to the ChatGPT tab in the broswer
+2. Click the `Etensions` button (it is usually on the top right corner of the broswer), and select the `ChatGPT-History-Downloader` extension
+3. Click the download button, your chat history will be downloaded!
+
+## A sample downloaded Markdown output
+```
+**Yihang Luo**: Hi! How are you?
+
+--------
+**ChatGPT**: Hello! As an AI language model, I don't have feelings like humans do, but I'm here to help you with any questions or tasks you have. How can I assist you today?
+
+--------
+**Yihang Luo**: What is 2 plus 2?
+
+--------
+**ChatGPT**: 2 plus 2 is equal to 4.
+```
+
 <!-- LICENSE -->
 ## License
 
