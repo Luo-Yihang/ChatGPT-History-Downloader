@@ -1,7 +1,6 @@
 const buttonDownloadMarkdown = document.getElementById("download-markdown");
 const buttonDownloadHTML = document.getElementById("download-html");
 
-
 async function getCurrentTab() {
   const queryOptions = { active: true, currentWindow: true };
   const [tab] = await chrome.tabs.query(queryOptions);
@@ -9,7 +8,7 @@ async function getCurrentTab() {
 }
 
 function downloadMarkdown() {
-  function h(html) { // convert html to markdown is a hacky way
+  function h(html) {
     return html // fix newlines
       .replace(/<p>/g, "\n") // replace p tags with newlines
       .replace(/<\/p>/g, "\n")
@@ -37,7 +36,7 @@ function downloadMarkdown() {
       .replace(/<\/h3>/g, "\n")
       .replace(/<h4>/g, "\n#### ") // replace h4 tags with markdown h4
       .replace(/<\/h4>/g, "\n")
-      // fix code blocks")
+      // fix code blocks
       .replace(/<code>([^<]*)<\/code>/g, "`$1`") // replace inline code tags with markdown code
       .replace(/<code[^>]*>/g, (match) => { // replace code tags with a language with markdown code
         const lm = match.match(/class="[^"]*language-([^"]+)"/);
@@ -68,10 +67,10 @@ function downloadMarkdown() {
       s.querySelector(".whitespace-pre-wrap") &&
         ((t += t == "" ? "" : "--------\n"),
         (t += `**${
-          s.querySelector("img")// if there is an image, use the alt text
+          s.querySelector("img")// if there is an image, it is the user, use the alt text as the name
             ? s.querySelector("img").alt
-            : "ChatGPT" // otherwise use ChatGPT
-        }**: ${h(s.querySelector(".whitespace-pre-wrap").innerHTML)}\n\n`));
+            : "ChatGPT" // otherwise it is ChatGPT
+        }**:<br> ${h(s.querySelector(".whitespace-pre-wrap").innerHTML)}\n\n`));
 
     const o = document.createElement("a");
     (o.download =
@@ -90,12 +89,16 @@ function downloadHTML() {
   const model = header.match(/<span>([^<]*)<\/span>/)[1];
   // each group is a message, so we can just download the whole thing... in theory
   const e = document.querySelectorAll(".group.text-token-text-primary");
-  output = "";
+  let output = `<h1>${
+    document.querySelector("title")?.innerText || "Conversation with ChatGPT"
+  }</h1>`;
   // loop through each message, and get the name and message, stripping out the div tags
   for (const s of e) {
-    // if there is an image, use the alt text as the name
+    // if there is an image, it is the user, use the alt text as the name
     const img = s.querySelector("img");
     const username = img ? img.alt : "ChatGPT";
+    // chatgpt content starts in a newline by default
+    const newlinePlacehold = img ? "<br><br>" : "<br>";
     // get the message, stripping out the div tags
     const message = s.querySelector(".whitespace-pre-wrap").innerHTML;
     // strip out the div tags from the message (this is a hacky way to do it) - need to support bare <div> tags and <div class="..."> tags
@@ -105,7 +108,7 @@ function downloadHTML() {
       // note that this will remove any other buttons as well
       .replace(/<button[^>]*>.*<\/button>/, "");
     // add the message to the output
-    output += `<div><b>${username}</b>: ${html}</div>\n`;
+    output += `<div><b>${username}</b>:${newlinePlacehold} ${html}</div><br>`;
   }
   // create a link to download the file
   const o = document.createElement("a");

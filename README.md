@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Luo-Yihang/ChatGPT-History-Downloader">
-    <img src="icon.png" alt="Logo" width="80" height="80">
+    <img src="./src/assets/icon.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">ChatGPT-History-Downloader</h3>
@@ -22,26 +22,26 @@
    ```
 2. In Chrome/Edge go to the extensions page (`chrome://extensions` / `edge://extensions`).
 3. Enable Developer Mode.
-4. Drag this repo folder anywhere on the page to import it (do not delete the folder afterwards).
+4. Drag this `src` folder in the repo anywhere on the page to import it (do not delete the folder afterwards).
 
 ## Usage
 
 1. Switch to the ChatGPT tab in the broswer
 2. Click the `Etensions` button (it is usually on the top right corner of the broswer), and select the `ChatGPT-History-Downloader` extension
-3. Click the download button, your chat history will be downloaded!
+3. Click the download button (formats in [`Markdown`, `html`] have been supported), your chat history will be downloaded!
 
 ## A sample downloaded Markdown output
 ```
-**Yihang Luo**: Hi! How are you?
+**Yihang Luo**:<br> Hi! How are you?
 
 --------
-**ChatGPT**: Hello! As an AI language model, I don't have feelings like humans do, but I'm here to help you with any questions or tasks you have. How can I assist you today?
+**ChatGPT**:<br> Hello! As an AI language model, I don't have feelings like humans do, but I'm here to help you with any questions or tasks you have. How can I assist you today?
 
 --------
-**Yihang Luo**: What is 2 plus 2?
+**Yihang Luo**:<br> What is 2 plus 2?
 
 --------
-**ChatGPT**: 2 plus 2 is equal to 4.
+**ChatGPT**:<br> 2 plus 2 is equal to 4.
 ```
 
 <!-- LICENSE -->
