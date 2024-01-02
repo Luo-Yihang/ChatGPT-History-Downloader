@@ -8,7 +8,7 @@
   <h3 align="center">ChatGPT-History-Downloader</h3>
 
   <p align="center">
-   Never lose a conversation with <a href="https://chat.openai.com"><strong>OpenAI ChatGPT</strong></a> again! With the ChatGPT-History-Downloader, you can easily save your chat history with the amazing ChatGPT locally. ChatGPT-History-Downloader is Broswer extension that supports Google chrome / Microsoft Edge.
+   Never lose a conversation with <a href="https://chat.openai.com"><strong>OpenAI ChatGPT</strong></a> again! With the ChatGPT-History-Downloader, you can easily save your chat history with the amazing ChatGPT locally. ChatGPT-History-Downloader is a broswer extension that supports Google chrome / Microsoft Edge.
     <br />
   </p>
 </div>
