@@ -8,7 +8,7 @@
   <h3 align="center">ChatGPT-History-Downloader</h3>
 
   <p align="center">
-   Never lose a conversation with <a href="https://chat.openai.com"><strong>OpenAI ChatGPT</strong></a> again! With the ChatGPT-History-Downloader, you can easily save your chat history with the amazing ChatGPT locally. ChatGPT-History-Downloader is a broswer extension that supports Google chrome / Microsoft Edge.
+   Never lose a conversation with <a href="https://chat.openai.com"><strong>OpenAI ChatGPT</strong></a> again! With the ChatGPT-History-Downloader, you can easily save your chat history as Markdown files locally. The extension automatically detects and references images and files in your conversations. ChatGPT-History-Downloader is a browser extension that supports Google Chrome / Microsoft Edge.
     <br />
   </p>
 </div>
@@ -26,22 +26,23 @@
 
 ## Usage
 
-1. Switch to the ChatGPT tab in the broswer
-2. Click the `Etensions` button (it is usually on the top right corner of the broswer), and select the `ChatGPT-History-Downloader` extension
-3. Click the download button (formats in [`Markdown`, `html`] have been supported), your chat history will be downloaded!
+1. Switch to the ChatGPT tab in the browser
+2. Click the `Extensions` button (it is usually on the top right corner of the browser), and select the `ChatGPT-History-Downloader` extension
+3. Click the download button to save your chat history
+
 
 ## A sample downloaded Markdown output
 ```
-**Yihang Luo**:<br> Hi! How are you?
+**User**: Hi! How are you?
 
 --------
-**ChatGPT**:<br> Hello! As an AI language model, I don't have feelings like humans do, but I'm here to help you with any questions or tasks you have. How can I assist you today?
+**ChatGPT**: Hello! As an AI language model, I don't have feelings like humans do, but I'm here to help you with any questions or tasks you have. How can I assist you today?
 
 --------
-**Yihang Luo**:<br> What is 2 plus 2?
+**User**: Can you analyze this image? ![Image](image_2_0.png)
 
 --------
-**ChatGPT**:<br> 2 plus 2 is equal to 4.
+**ChatGPT**: I can see the image you've shared. It appears to be...
 ```
 
 <!-- LICENSE -->

@@ -1,11 +1,11 @@
 {
   "name": "ChatGPT History Downloader",
-  "version": "0.21",
+  "version": "0.30",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["scripting", "activeTab"],
+  "permissions": ["scripting", "activeTab", "downloads"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": "./assets/icon.png"
