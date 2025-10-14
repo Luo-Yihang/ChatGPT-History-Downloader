@@ -1,13 +1,33 @@
 {
   "name": "ChatGPT History Downloader",
-  "version": "0.30",
+  "version": "0.31",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["scripting", "activeTab", "downloads"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.openai.com/*",
+        "https://chatgpt.com/*"
+      ],
+      "js": [
+        "vendor/turndown.js",
+        "vendor/turndown-plugin-gfm.js",
+        "content.js"
+      ],
+      "run_at": "document_idle",
+      "css": [
+        "content.css"
+      ]
+    }
+  ],
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "downloads"
+  ],
   "action": {
-    "default_popup": "popup.html",
     "default_icon": "./assets/icon.png"
   }
 }
